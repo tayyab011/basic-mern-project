@@ -16,7 +16,10 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://mernbasicproject1.netlify.app",
+    ].filter(Boolean),
   })
 );
 app.use(express.json({ limit: MAX_JSON_SIZE }));
